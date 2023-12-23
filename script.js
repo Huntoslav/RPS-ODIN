@@ -16,14 +16,17 @@ const choices = {
 }
 
 
+
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase()
+    while (!["rock", "paper", "scissors"].includes(playerSelection)) 
+        playerSelection = prompt("Invalid choice. Enter: rock, paper, or scissors").toLowerCase()
     
     if(playerSelection === computerSelection){
          return `Its a TIE you both chose ${playerSelection}`
     } else if (choices[playerSelection] === computerSelection){
         return `You won! Your ${playerSelection} beats computers ${computerSelection}`
-    } else {
+    } else if(choices[computerSelection] === playerSelection){
         return `You lose! Computers ${computerSelection} beats your ${playerSelection}`
     }
 }
@@ -33,7 +36,9 @@ function game(){
     let computerScore = 0
 
     for(let i = 0; i < 5; i ++){
-        let playerSelection = prompt("Enter: rock || paper || scissors")
+    
+    let playerSelection = prompt("Enter: rock || paper || scissors")
+        
     playerSelection = playerSelection.toLowerCase()
     const computerSelection = getComputerChoice()
 
