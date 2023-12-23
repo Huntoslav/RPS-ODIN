@@ -9,24 +9,52 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice())
-
 const choices = {
     rock: "scissors",
     paper: "rock",
     scissors: "paper"
 }
 
+
 function playRound(playerSelection, computerSelection){
-    playerSelection = prompt("Enter rock or paper or scissors")
-    computerSelection = getComputerChoice().toLocaleLowerCase()
+    playerSelection = playerSelection.toLowerCase()
+    
     if(playerSelection === computerSelection){
-        console.log(`Its a TIE you both chose ${playerSelection}`)
+         return `Its a TIE you both chose ${playerSelection}`
     } else if (choices[playerSelection] === computerSelection){
-        console.log(`You won! Your ${playerSelection} beats computers ${computerSelection}`)
+        return `You won! Your ${playerSelection} beats computers ${computerSelection}`
     } else {
-        console.log(`You lose! Computers ${computerSelection} beats your ${playerSelection}`)
+        return `You lose! Computers ${computerSelection} beats your ${playerSelection}`
     }
 }
 
-playRound()
+function game(){
+    let playerScore = 0
+    let computerScore = 0
+
+    for(let i = 0; i < 5; i ++){
+        let playerSelection = prompt("Enter: rock || paper || scissors")
+    playerSelection = playerSelection.toLowerCase()
+    const computerSelection = getComputerChoice()
+
+    
+    let roundResult = playRound(playerSelection, computerSelection)
+    console.log(roundResult)
+        if(roundResult.includes("won!")){
+            playerScore++
+        } else if(roundResult.includes("lose!")){
+            computerScore++
+        }
+    }
+    console.log("FINAL SCORE:")
+    console.log(`Player score: ${playerScore} Computer score: ${computerScore}`)
+    if(playerScore > computerScore){
+        console.log("YOU WON")
+    } else if (playerScore < computerScore){
+        console.log("YOU LOST")
+    } else {
+        console.log("its a TIE")
+    }
+}
+
+game()
