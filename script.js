@@ -34,17 +34,23 @@ let rock = document.querySelector(".rock").addEventListener("click", function(e)
     playerSelection = "rock"
     let result =playRound(playerSelection)
     console.log(result)
+    game(result)
 })
 
 let paper = document.querySelector(".paper").addEventListener("click", function(e){
     playerSelection = "paper"
     let result =playRound(playerSelection)
     console.log(result)
+    game(result)
 })
 
 let scissors = document.querySelector(".scissors").addEventListener("click", function(e){
     let result =playRound(playerSelection)
     console.log(result)
+    game(result)
 })
 
-
+function game(gameResult){
+    let showResult = document.querySelector(".myDiv")
+    showResult.textContent = gameResult
+}
