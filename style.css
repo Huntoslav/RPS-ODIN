@@ -1,0 +1,21 @@
+#game-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  button {
+    font-size: 16px;
+    margin: 10px;
+  }
+  
+  #results {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  #score {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

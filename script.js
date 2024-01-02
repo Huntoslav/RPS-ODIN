@@ -17,11 +17,10 @@ const choices = {
 
 
 
-function playRound(playerSelection, computerSelection){
-    playerSelection = playerSelection.toLowerCase()
-    while (!["rock", "paper", "scissors"].includes(playerSelection)) 
-        playerSelection = prompt("Invalid choice. Enter: rock, paper, or scissors").toLowerCase()
+function playRound(playerSelection){
     
+    let computerSelection = getComputerChoice()
+
     if(playerSelection === computerSelection){
          return `Its a TIE you both chose ${playerSelection}`
     } else if (choices[playerSelection] === computerSelection){
@@ -31,35 +30,21 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
-    let playerScore = 0
-    let computerScore = 0
+let rock = document.querySelector(".rock").addEventListener("click", function(e){
+    playerSelection = "rock"
+    let result =playRound(playerSelection)
+    console.log(result)
+})
 
-    for(let i = 0; i < 5; i ++){
-    
-    let playerSelection = prompt("Enter: rock || paper || scissors")
-        
-    playerSelection = playerSelection.toLowerCase()
-    const computerSelection = getComputerChoice()
+let paper = document.querySelector(".paper").addEventListener("click", function(e){
+    playerSelection = "paper"
+    let result =playRound(playerSelection)
+    console.log(result)
+})
 
-    
-    let roundResult = playRound(playerSelection, computerSelection)
-    console.log(roundResult)
-        if(roundResult.includes("won!")){
-            playerScore++
-        } else if(roundResult.includes("lose!")){
-            computerScore++
-        }
-    }
-    console.log("FINAL SCORE:")
-    console.log(`Player score: ${playerScore} Computer score: ${computerScore}`)
-    if(playerScore > computerScore){
-        console.log("YOU WON")
-    } else if (playerScore < computerScore){
-        console.log("YOU LOST")
-    } else {
-        console.log("its a TIE")
-    }
-}
+let scissors = document.querySelector(".scissors").addEventListener("click", function(e){
+    let result =playRound(playerSelection)
+    console.log(result)
+})
 
-game()
+
