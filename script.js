@@ -116,15 +116,13 @@ function restartTheGame(){
         let deleteTheTextComputer = document.getElementById("computerWon")
         let deleteTheButton = document.getElementById("restart")
 
-        // Remove the button
         document.querySelector(".container").removeChild(deleteTheButton);
             
-        // Clear the text content
         if (deleteTheTextPlayer) {
-            deleteTheTextPlayer.textContent = "";
+            deleteTheTextPlayer.textContent = ""
         }
         if (deleteTheTextComputer) {
-            deleteTheTextComputer.textContent = "";
+            deleteTheTextComputer.textContent = ""
         }
 
         showScore()
