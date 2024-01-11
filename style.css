@@ -1,6 +1,8 @@
 button{
     padding: 20px;
-    
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
 }
 
 .rock:hover{
