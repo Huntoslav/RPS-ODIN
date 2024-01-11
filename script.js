@@ -88,11 +88,13 @@ function endGame(){
         let playerWon = document.createElement("p")
         playerWon.id = "playerWon"
         playerWon.textContent = `CG! YOU WON !!!`
+        playerWon.style.color = "green"
         document.querySelector(".container").appendChild(playerWon)
     }if (computerScore === 5){
         let computerWon = document.createElement("p")
         computerWon.id = "computerWon"
         computerWon.textContent = "SADLY, YOU LOSE :("
+        computerWon.style.color = "red"
         document.querySelector(".container").appendChild(computerWon)
     }
     restartTheGame()
@@ -104,6 +106,7 @@ function restartTheGame(){
         let restart = document.createElement("button")
         restart.id = "restart"
         restart.textContent = "RESTART"
+        restart.style.background = "red"
         document.querySelector(".container").appendChild(restart)
 
         let startNewGame = document.getElementById("restart")

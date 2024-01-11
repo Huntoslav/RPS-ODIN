@@ -1,0 +1,23 @@
+button{
+    padding: 20px;
+    
+}
+
+.rock:hover{
+    background-color: grey;
+}
+
+.paper:hover{
+    background-color: whitesmoke;
+}
+
+.scissors:hover{
+    background-color: gold;
+}
+
+.container{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    padding-top: 12px;
+}
