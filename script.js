@@ -1,3 +1,4 @@
+// function providing random computer choice - rock / paper / scissors
 function getComputerChoice(){
     let result = Math.floor(Math.random()*3)
     if(result === 0){
@@ -9,6 +10,7 @@ function getComputerChoice(){
     }
 }
 
+// possible choices of each player
 const choices = {
     rock: "scissors",
     paper: "rock",
@@ -17,6 +19,7 @@ const choices = {
 let playerScore =0
 let computerScore = 0
 
+// function that declares the winner of each round
 function playRound(playerSelection){
     let computerSelection = getComputerChoice()
     if(playerSelection === computerSelection){
@@ -32,7 +35,7 @@ function playRound(playerSelection){
 }
 
 
-
+// event listeners that work on clicking the buttons
 const rock = document.querySelector(".rock")
 rock.addEventListener("click", function(e){
     if (playerScore === 5 || computerScore === 5) {
@@ -62,6 +65,8 @@ const scissors = document.querySelector(".scissors").addEventListener("click", f
     game(result)
 })
 
+
+// function that plays the game
 function game(showResult){
     let showScoreOnPage = document.querySelector(".showResult")
     showScoreOnPage.textContent = showResult
@@ -70,6 +75,7 @@ function game(showResult){
     
 }
 
+// function which shows the score of both PC and USER
 function showScore(){
     let showTheScore = document.getElementById("score")
 
@@ -83,11 +89,12 @@ function showScore(){
     }
 }
 
+// function showing result of the game (who scored first 5 points)
 function endGame(){
     if(playerScore === 5){
         let playerWon = document.createElement("p")
         playerWon.id = "playerWon"
-        playerWon.textContent = `CG! YOU WON !!!`
+        playerWon.textContent = `CG! YOU WON !!! :)`
         playerWon.style.color = "green"
         playerWon.style.backgroundColor = "yellow"
         document.querySelector(".container").appendChild(playerWon)
@@ -102,7 +109,7 @@ function endGame(){
     restartTheGame()
 }
 
-
+// function that restars the game whenever someone reaches 5 points
 function restartTheGame(){
     if(computerScore === 5 || playerScore === 5){
         let restart = document.createElement("button")
