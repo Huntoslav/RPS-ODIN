@@ -119,10 +119,13 @@ function restartTheGame(){
         document.querySelector(".container").removeChild(deleteTheButton);
             
         if (deleteTheTextPlayer) {
-            deleteTheTextPlayer.textContent = ""
+            document.querySelector(".container").removeChild(deleteTheTextPlayer);
         }
         if (deleteTheTextComputer) {
-            deleteTheTextComputer.textContent = ""
+            document.querySelector(".container").removeChild(deleteTheTextComputer);
+        }
+        if (deleteTheButton) {
+            document.querySelector(".container").removeChild(deleteTheButton);
         }
 
         showScore()
