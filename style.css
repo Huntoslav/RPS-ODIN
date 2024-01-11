@@ -3,6 +3,9 @@ button{
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
+    border-color: grey;
+    margin: 12px;
+    
 }
 
 .rock:hover{
@@ -22,4 +25,8 @@ button{
     margin: 0;
     font-size: 18px;
     padding-top: 12px;
+}
+
+div{
+    text-align: center;
 }

@@ -96,14 +96,14 @@ function endGame(){
         playerWon.id = "playerWon"
         playerWon.textContent = `CG! YOU WON !!! :)`
         playerWon.style.color = "green"
-        playerWon.style.backgroundColor = "yellow"
+        playerWon.style.fontSize = "36px"
         document.querySelector(".container").appendChild(playerWon)
     }if (computerScore === 5){
         let computerWon = document.createElement("p")
         computerWon.id = "computerWon"
         computerWon.textContent = "SADLY, YOU LOSE :("
         computerWon.style.color = "red"
-        computerWon.style.backgroundColor = "Yellow"
+        computerWon.style.fontSize = "36px"
         document.querySelector(".container").appendChild(computerWon)
     }
     restartTheGame()
